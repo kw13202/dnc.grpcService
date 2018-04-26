@@ -6,19 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="X:\Users\wr\.nuget\packages\nlog.config\4.5.3\contentFiles\any\any\NLog.config" Link="NLog.config">
-      <Private>True</Private>
-      <NuGetPackageVersion>4.5.3</NuGetPackageVersion>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <NuGetItemType>None</NuGetItemType>
-      <TargetPath>NLog.config</TargetPath>
-      <NuGetPackageId>NLog.Config</NuGetPackageId>
-    </None>
+
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.1" />
     <PackageReference Include="NLog" Version="4.5.3" />
     <PackageReference Include="NLog.Config" Version="4.5.3" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.0.1" />
   </ItemGroup>
 
 </Project>
