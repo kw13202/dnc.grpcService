@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnc.grpcService.Model", "dn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnc.grpcService.Untils", "dnc.grpcService.Untils\dnc.grpcService.Untils.csproj", "{B8FE9E49-56B0-4744-B401-8C43D46CDB08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnc.grpcService.protocol", "dnc.grpcService.protocol\dnc.grpcService.protocol.csproj", "{87AA06D2-5879-4F19-9F96-0D9A9786BC7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnc.grpcService.protocol", "dnc.grpcService.protocol\dnc.grpcService.protocol.csproj", "{87AA06D2-5879-4F19-9F96-0D9A9786BC7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

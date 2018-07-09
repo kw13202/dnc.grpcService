@@ -1,0 +1,24 @@
+syntax = "proto3"; 
+option java_multiple_files = true;
+package dnc.grpcService.protocol; 
+
+message MessageHead {
+    string IP = 1;
+}
+
+message HolidayVM {
+    int32 Id = 1;
+    string StartDate = 2;
+    string EndDate = 3;
+    string HolidayName = 4;
+}
+
+message GetHolidaysReq { 
+    MessageHead Head = 1;
+} 
+
+message GetHolidaysRsp { 
+    int32 RetCode = 1;
+    string RetDesc = 2;
+    repeated HolidayVM Holidays = 3;
+} 
