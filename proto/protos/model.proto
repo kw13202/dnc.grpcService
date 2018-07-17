@@ -22,3 +22,25 @@ message GetHolidaysRsp {
     string RetDesc = 2;
     repeated HolidayVM Holidays = 3;
 } 
+
+message AddHolidaysReq { 
+    MessageHead Head = 1;
+    string HolidayName = 2;
+    string StartDate = 3;
+    string EndDate = 4;
+} 
+
+message AddHolidaysRsp { 
+    int32 RetCode = 1;
+    string RetDesc = 2;
+    int32 Id = 3;
+} 
+
+
+
+
+
+
+
+
+

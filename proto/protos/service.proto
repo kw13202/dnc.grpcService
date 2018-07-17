@@ -6,6 +6,7 @@ import "model.proto";
 service HolidayService
 { 
     rpc GetHolidays (GetHolidaysReq) returns (GetHolidaysRsp) {} 
+    rpc AddHolidays (AddHolidaysReq) returns (AddHolidaysRsp) {} 
 } 
 
 

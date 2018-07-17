@@ -22,7 +22,7 @@ namespace dnc.grpcService.Repository
 
         public static void Init(RpcDbContext context)
         {
-            context.Database.EnsureDeleted();
+            //context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
             if (context.TbHoliday.Any())

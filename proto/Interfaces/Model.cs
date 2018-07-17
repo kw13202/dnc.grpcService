@@ -29,14 +29,20 @@ namespace Dnc.GrpcService.Protocol {
             "MiUuZG5jLmdycGNTZXJ2aWNlLnByb3RvY29sLk1lc3NhZ2VIZWFkImkKDkdl",
             "dEhvbGlkYXlzUnNwEg8KB1JldENvZGUYASABKAUSDwoHUmV0RGVzYxgCIAEo",
             "CRI1CghIb2xpZGF5cxgDIAMoCzIjLmRuYy5ncnBjU2VydmljZS5wcm90b2Nv",
-            "bC5Ib2xpZGF5Vk1CAlABYgZwcm90bzM="));
+            "bC5Ib2xpZGF5Vk0ifgoOQWRkSG9saWRheXNSZXESMwoESGVhZBgBIAEoCzIl",
+            "LmRuYy5ncnBjU2VydmljZS5wcm90b2NvbC5NZXNzYWdlSGVhZBITCgtIb2xp",
+            "ZGF5TmFtZRgCIAEoCRIRCglTdGFydERhdGUYAyABKAkSDwoHRW5kRGF0ZRgE",
+            "IAEoCSI+Cg5BZGRIb2xpZGF5c1JzcBIPCgdSZXRDb2RlGAEgASgFEg8KB1Jl",
+            "dERlc2MYAiABKAkSCgoCSWQYAyABKAVCAlABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Dnc.GrpcService.Protocol.MessageHead), global::Dnc.GrpcService.Protocol.MessageHead.Parser, new[]{ "IP" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Dnc.GrpcService.Protocol.HolidayVM), global::Dnc.GrpcService.Protocol.HolidayVM.Parser, new[]{ "Id", "StartDate", "EndDate", "HolidayName" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Dnc.GrpcService.Protocol.GetHolidaysReq), global::Dnc.GrpcService.Protocol.GetHolidaysReq.Parser, new[]{ "Head" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Dnc.GrpcService.Protocol.GetHolidaysRsp), global::Dnc.GrpcService.Protocol.GetHolidaysRsp.Parser, new[]{ "RetCode", "RetDesc", "Holidays" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Dnc.GrpcService.Protocol.GetHolidaysRsp), global::Dnc.GrpcService.Protocol.GetHolidaysRsp.Parser, new[]{ "RetCode", "RetDesc", "Holidays" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Dnc.GrpcService.Protocol.AddHolidaysReq), global::Dnc.GrpcService.Protocol.AddHolidaysReq.Parser, new[]{ "Head", "HolidayName", "StartDate", "EndDate" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Dnc.GrpcService.Protocol.AddHolidaysRsp), global::Dnc.GrpcService.Protocol.AddHolidaysRsp.Parser, new[]{ "RetCode", "RetDesc", "Id" }, null, null, null)
           }));
     }
     #endregion
@@ -641,6 +647,386 @@ namespace Dnc.GrpcService.Protocol {
           }
           case 26: {
             holidays_.AddEntriesFrom(input, _repeated_holidays_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class AddHolidaysReq : pb::IMessage<AddHolidaysReq> {
+    private static readonly pb::MessageParser<AddHolidaysReq> _parser = new pb::MessageParser<AddHolidaysReq>(() => new AddHolidaysReq());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<AddHolidaysReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Dnc.GrpcService.Protocol.ModelReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddHolidaysReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddHolidaysReq(AddHolidaysReq other) : this() {
+      Head = other.head_ != null ? other.Head.Clone() : null;
+      holidayName_ = other.holidayName_;
+      startDate_ = other.startDate_;
+      endDate_ = other.endDate_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddHolidaysReq Clone() {
+      return new AddHolidaysReq(this);
+    }
+
+    /// <summary>Field number for the "Head" field.</summary>
+    public const int HeadFieldNumber = 1;
+    private global::Dnc.GrpcService.Protocol.MessageHead head_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Dnc.GrpcService.Protocol.MessageHead Head {
+      get { return head_; }
+      set {
+        head_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "HolidayName" field.</summary>
+    public const int HolidayNameFieldNumber = 2;
+    private string holidayName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string HolidayName {
+      get { return holidayName_; }
+      set {
+        holidayName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "StartDate" field.</summary>
+    public const int StartDateFieldNumber = 3;
+    private string startDate_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StartDate {
+      get { return startDate_; }
+      set {
+        startDate_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "EndDate" field.</summary>
+    public const int EndDateFieldNumber = 4;
+    private string endDate_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string EndDate {
+      get { return endDate_; }
+      set {
+        endDate_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as AddHolidaysReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(AddHolidaysReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Head, other.Head)) return false;
+      if (HolidayName != other.HolidayName) return false;
+      if (StartDate != other.StartDate) return false;
+      if (EndDate != other.EndDate) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (head_ != null) hash ^= Head.GetHashCode();
+      if (HolidayName.Length != 0) hash ^= HolidayName.GetHashCode();
+      if (StartDate.Length != 0) hash ^= StartDate.GetHashCode();
+      if (EndDate.Length != 0) hash ^= EndDate.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (head_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Head);
+      }
+      if (HolidayName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(HolidayName);
+      }
+      if (StartDate.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(StartDate);
+      }
+      if (EndDate.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(EndDate);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (head_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Head);
+      }
+      if (HolidayName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(HolidayName);
+      }
+      if (StartDate.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StartDate);
+      }
+      if (EndDate.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EndDate);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(AddHolidaysReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.head_ != null) {
+        if (head_ == null) {
+          head_ = new global::Dnc.GrpcService.Protocol.MessageHead();
+        }
+        Head.MergeFrom(other.Head);
+      }
+      if (other.HolidayName.Length != 0) {
+        HolidayName = other.HolidayName;
+      }
+      if (other.StartDate.Length != 0) {
+        StartDate = other.StartDate;
+      }
+      if (other.EndDate.Length != 0) {
+        EndDate = other.EndDate;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            if (head_ == null) {
+              head_ = new global::Dnc.GrpcService.Protocol.MessageHead();
+            }
+            input.ReadMessage(head_);
+            break;
+          }
+          case 18: {
+            HolidayName = input.ReadString();
+            break;
+          }
+          case 26: {
+            StartDate = input.ReadString();
+            break;
+          }
+          case 34: {
+            EndDate = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class AddHolidaysRsp : pb::IMessage<AddHolidaysRsp> {
+    private static readonly pb::MessageParser<AddHolidaysRsp> _parser = new pb::MessageParser<AddHolidaysRsp>(() => new AddHolidaysRsp());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<AddHolidaysRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Dnc.GrpcService.Protocol.ModelReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddHolidaysRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddHolidaysRsp(AddHolidaysRsp other) : this() {
+      retCode_ = other.retCode_;
+      retDesc_ = other.retDesc_;
+      id_ = other.id_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AddHolidaysRsp Clone() {
+      return new AddHolidaysRsp(this);
+    }
+
+    /// <summary>Field number for the "RetCode" field.</summary>
+    public const int RetCodeFieldNumber = 1;
+    private int retCode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RetCode {
+      get { return retCode_; }
+      set {
+        retCode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RetDesc" field.</summary>
+    public const int RetDescFieldNumber = 2;
+    private string retDesc_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string RetDesc {
+      get { return retDesc_; }
+      set {
+        retDesc_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Id" field.</summary>
+    public const int IdFieldNumber = 3;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as AddHolidaysRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(AddHolidaysRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RetCode != other.RetCode) return false;
+      if (RetDesc != other.RetDesc) return false;
+      if (Id != other.Id) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RetCode != 0) hash ^= RetCode.GetHashCode();
+      if (RetDesc.Length != 0) hash ^= RetDesc.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (RetCode != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(RetCode);
+      }
+      if (RetDesc.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(RetDesc);
+      }
+      if (Id != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Id);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (RetCode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RetCode);
+      }
+      if (RetDesc.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RetDesc);
+      }
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(AddHolidaysRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RetCode != 0) {
+        RetCode = other.RetCode;
+      }
+      if (other.RetDesc.Length != 0) {
+        RetDesc = other.RetDesc;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            RetCode = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            RetDesc = input.ReadString();
+            break;
+          }
+          case 24: {
+            Id = input.ReadInt32();
             break;
           }
         }

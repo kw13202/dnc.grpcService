@@ -14,6 +14,8 @@ namespace Dnc.GrpcService.Protocol {
 
     static readonly grpc::Marshaller<global::Dnc.GrpcService.Protocol.GetHolidaysReq> __Marshaller_GetHolidaysReq = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Dnc.GrpcService.Protocol.GetHolidaysReq.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Dnc.GrpcService.Protocol.GetHolidaysRsp> __Marshaller_GetHolidaysRsp = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Dnc.GrpcService.Protocol.GetHolidaysRsp.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Dnc.GrpcService.Protocol.AddHolidaysReq> __Marshaller_AddHolidaysReq = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Dnc.GrpcService.Protocol.AddHolidaysReq.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Dnc.GrpcService.Protocol.AddHolidaysRsp> __Marshaller_AddHolidaysRsp = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Dnc.GrpcService.Protocol.AddHolidaysRsp.Parser.ParseFrom);
 
     static readonly grpc::Method<global::Dnc.GrpcService.Protocol.GetHolidaysReq, global::Dnc.GrpcService.Protocol.GetHolidaysRsp> __Method_GetHolidays = new grpc::Method<global::Dnc.GrpcService.Protocol.GetHolidaysReq, global::Dnc.GrpcService.Protocol.GetHolidaysRsp>(
         grpc::MethodType.Unary,
@@ -21,6 +23,13 @@ namespace Dnc.GrpcService.Protocol {
         "GetHolidays",
         __Marshaller_GetHolidaysReq,
         __Marshaller_GetHolidaysRsp);
+
+    static readonly grpc::Method<global::Dnc.GrpcService.Protocol.AddHolidaysReq, global::Dnc.GrpcService.Protocol.AddHolidaysRsp> __Method_AddHolidays = new grpc::Method<global::Dnc.GrpcService.Protocol.AddHolidaysReq, global::Dnc.GrpcService.Protocol.AddHolidaysRsp>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "AddHolidays",
+        __Marshaller_AddHolidaysReq,
+        __Marshaller_AddHolidaysRsp);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -32,6 +41,11 @@ namespace Dnc.GrpcService.Protocol {
     public abstract partial class HolidayServiceBase
     {
       public virtual global::System.Threading.Tasks.Task<global::Dnc.GrpcService.Protocol.GetHolidaysRsp> GetHolidays(global::Dnc.GrpcService.Protocol.GetHolidaysReq request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Dnc.GrpcService.Protocol.AddHolidaysRsp> AddHolidays(global::Dnc.GrpcService.Protocol.AddHolidaysReq request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -77,6 +91,22 @@ namespace Dnc.GrpcService.Protocol {
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetHolidays, null, options, request);
       }
+      public virtual global::Dnc.GrpcService.Protocol.AddHolidaysRsp AddHolidays(global::Dnc.GrpcService.Protocol.AddHolidaysReq request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return AddHolidays(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Dnc.GrpcService.Protocol.AddHolidaysRsp AddHolidays(global::Dnc.GrpcService.Protocol.AddHolidaysReq request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_AddHolidays, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Dnc.GrpcService.Protocol.AddHolidaysRsp> AddHolidaysAsync(global::Dnc.GrpcService.Protocol.AddHolidaysReq request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return AddHolidaysAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Dnc.GrpcService.Protocol.AddHolidaysRsp> AddHolidaysAsync(global::Dnc.GrpcService.Protocol.AddHolidaysReq request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_AddHolidays, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override HolidayServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -89,7 +119,8 @@ namespace Dnc.GrpcService.Protocol {
     public static grpc::ServerServiceDefinition BindService(HolidayServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetHolidays, serviceImpl.GetHolidays).Build();
+          .AddMethod(__Method_GetHolidays, serviceImpl.GetHolidays)
+          .AddMethod(__Method_AddHolidays, serviceImpl.AddHolidays).Build();
     }
 
   }
